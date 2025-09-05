@@ -1,60 +1,59 @@
 # React + Node + PostgreSQL + Nginx + Docker Project
+project with **React frontend**, **Node.js backend**, **PostgreSQL database**, and **Nginx reverse proxy**, all containerized using **Docker** and **Docker Compose**.
 
-project with React frontend, Node.js backend, PostgreSQL database, and Nginx as reverse proxy, all containerized using Docker and Docker Compose.
+---
 
-# Project Structure
+## Project Structure
+
+
+
 react-node-postgres-nginx-docker-project/
-├── backend/          
-│   ├── src/          
-│   ├── package.json
-│   └── Dockerfile
-├── frontend/         
-│   ├── src/          
-│   ├── index.html
-│   ├── package.json
-│   └── Dockerfile
-├── db/               
-│   └── init.sql
-├── nginx/            
-│   └── default.conf
-├── docker-compose.yml
-└── .env.example     
+├── backend/ # Node.js Express backend
+│ ├── src/ # Source code (routes, controllers)
+│ ├── package.json # Backend dependencies
+│ └── Dockerfile # Backend Dockerfile
+├── frontend/ # React frontend (Vite)
+│ ├── src/ # React components
+│ ├── index.html # Frontend entry HTML
+│ ├── package.json # Frontend dependencies
+│ └── Dockerfile # Frontend Dockerfile
+├── db/ # PostgreSQL initialization scripts
+│ └── init.sql # Creates tables and initial data
+├── nginx/ # Nginx configuration
+│ └── default.conf # Reverse proxy rules
+├── docker-compose.yml # Docker Compose setup
+└── .env.example # Environment variables template 
 
-How It Works
 
-Database (PostgreSQL)
+---
 
-Initializes with db/init.sql creating the users table.
+## How It Works
 
-Credentials and database name configured via .env.
+1. **Database (PostgreSQL)**  
+   - Initializes with `db/init.sql`.  
+   - Credentials and database name are set via `.env`.  
 
-Backend (Node.js / Express)
+2. **Backend (Node.js / Express)**  
+   - Connects to PostgreSQL using `DATABASE_URL`.  
+   - Provides API endpoints under `/api/`.  
+   - Health check available at `/health`.
 
-Connects to PostgreSQL using DATABASE_URL.
+3. **Frontend (React / Vite)**  
+   - Fetches data from backend `/api/*` endpoints.  
+   - Built and served via Nginx in production.
 
-Exposes API routes at /api/*.
+4. **Nginx**  
+   - Routes `/api/` requests to backend.  
+   - Serves frontend static files for all other routes.
 
-Health endpoint at /health for container healthchecks.
+5. **Docker & Docker Compose**  
+   - Each service (`frontend`, `backend`, `db`, `nginx`) runs in its own container.  
+   - `docker-compose up --build` spins up the entire stack.
 
-Frontend (React / Vite)
+---
 
-Fetches data from backend /api/* endpoints.
+## Quick Start
 
-Built and served via Nginx in production.
-
-Nginx
-
-Acts as reverse proxy.
-
-Routes /api/ requests to backend and all other requests to frontend.
-
-Docker & Docker Compose
-
-Each service runs in its own container: frontend, backend, db, nginx.
-
-docker-compose up --build spins up the full stack.
-
-# Quick Start
 
 1. Run: docker compose up --build -d
 2. Visit http://localhost:8080
