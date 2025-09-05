@@ -8,22 +8,21 @@ project with **React frontend**, **Node.js backend**, **PostgreSQL database**, a
 
 
 react-node-postgres-nginx-docker-project/
-├── backend/ # Node.js Express backend
-│ ├── src/ # Source code (routes, controllers)
-│ ├── package.json # Backend dependencies
-│ └── Dockerfile # Backend Dockerfile
-├── frontend/ # React frontend (Vite)
-│ ├── src/ # React components
-│ ├── index.html # Frontend entry HTML
-│ ├── package.json # Frontend dependencies
-│ └── Dockerfile # Frontend Dockerfile
-├── db/ # PostgreSQL initialization scripts
-│ └── init.sql # Creates tables and initial data
-├── nginx/ # Nginx configuration
-│ └── default.conf # Reverse proxy rules
-├── docker-compose.yml # Docker Compose setup
-└── .env.example # Environment variables template 
-
+├── backend/
+│ ├── src/
+│ ├── package.json 
+│ └── Dockerfile
+├── frontend/ 
+│ ├── src/ 
+│ ├── index.html 
+│ ├── package.json 
+│ └── Dockerfile
+├── db/ 
+│ └── init.sql 
+├── nginx/ 
+│ └── default.conf
+├── docker-compose.yml 
+└── .env
 
 ---
 
