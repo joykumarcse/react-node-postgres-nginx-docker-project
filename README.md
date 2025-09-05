@@ -4,21 +4,21 @@ project with React frontend, Node.js backend, PostgreSQL database, and Nginx as 
 
 # Project Structure
 react-node-postgres-nginx-docker-project/
-├── backend/          # Node.js Express backend
-│   ├── src/          # Source code (routes, controllers)
+├── backend/          
+│   ├── src/          
 │   ├── package.json
 │   └── Dockerfile
-├── frontend/         # React frontend (Vite)
-│   ├── src/          # React components
+├── frontend/         
+│   ├── src/          
 │   ├── index.html
 │   ├── package.json
 │   └── Dockerfile
-├── db/               # PostgreSQL init scripts
+├── db/               
 │   └── init.sql
-├── nginx/            # Nginx configuration
+├── nginx/            
 │   └── default.conf
 ├── docker-compose.yml
-└── .env.example      # Environment variables template
+└── .env.example     
 
 How It Works
 
