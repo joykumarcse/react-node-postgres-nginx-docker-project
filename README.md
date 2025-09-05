@@ -1,12 +1,8 @@
 # React + Node + PostgreSQL + Nginx + Docker Project
 project with **React frontend**, **Node.js backend**, **PostgreSQL database**, and **Nginx reverse proxy**, all containerized using **Docker** and **Docker Compose**.
 
----
-
 ## Project Structure
-
-
-
+---
 react-node-postgres-nginx-docker-project/
 ├── backend/
 │ ├── src/
@@ -23,7 +19,6 @@ react-node-postgres-nginx-docker-project/
 │ └── default.conf
 ├── docker-compose.yml 
 └── .env
-
 ---
 
 ## How It Works
