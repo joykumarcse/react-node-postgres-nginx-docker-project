@@ -1,26 +1,6 @@
 # React + Node + PostgreSQL + Nginx + Docker Project
 project with **React frontend**, **Node.js backend**, **PostgreSQL database**, and **Nginx reverse proxy**, all containerized using **Docker** and **Docker Compose**.
 
-## Project Structure
----
-react-node-postgres-nginx-docker-project/
-├── backend/
-│ ├── src/
-│ ├── package.json 
-│ └── Dockerfile
-├── frontend/ 
-│ ├── src/ 
-│ ├── index.html 
-│ ├── package.json 
-│ └── Dockerfile
-├── db/ 
-│ └── init.sql 
-├── nginx/ 
-│ └── default.conf
-├── docker-compose.yml 
-└── .env
----
-
 ## How It Works
 
 1. **Database (PostgreSQL)**  
@@ -32,9 +12,9 @@ react-node-postgres-nginx-docker-project/
    - Provides API endpoints under `/api/`.  
    - Health check available at `/health`.
 
-3. **Frontend (React / Vite)**  
+3. **Frontend (React)**  
    - Fetches data from backend `/api/*` endpoints.  
-   - Built and served via Nginx in production.
+   - Built and served via Nginx.
 
 4. **Nginx**  
    - Routes `/api/` requests to backend.  
@@ -44,7 +24,6 @@ react-node-postgres-nginx-docker-project/
    - Each service (`frontend`, `backend`, `db`, `nginx`) runs in its own container.  
    - `docker-compose up --build` spins up the entire stack.
 
----
 
 ## Quick Start
 
